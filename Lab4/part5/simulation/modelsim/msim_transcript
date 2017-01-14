@@ -1,0 +1,25 @@
+# Reading C:/altera_lite/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# do part5_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying C:/altera_lite/16.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera_lite/16.0/Lab4/part5 {C:/altera_lite/16.0/Lab4/part5/part5.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 23:23:09 on Oct 12,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera_lite/16.0/Lab4/part5" C:/altera_lite/16.0/Lab4/part5/part5.v 
+# -- Compiling module part5
+# -- Compiling module decimal_to_7seg
+# -- Compiling module binary_to_7seg
+# 
+# Top level modules:
+# 	part5
+# End time: 23:23:09 on Oct 12,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 

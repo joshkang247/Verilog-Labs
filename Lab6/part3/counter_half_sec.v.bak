@@ -1,0 +1,17 @@
+module counter_half_sec(input enable, clock, clear, output reg q);
+	reg [25:0] count;
+	always @ (posedge clock, posedge clear)
+		if (clear)
+			count <= 26'b0;
+		else
+			if (count == 2)
+			begin
+				count <= 26'b 0;
+				q <= 1;
+			end
+			else
+			begin
+				count = count + 1;
+				q <= 0;
+			end
+endmodule

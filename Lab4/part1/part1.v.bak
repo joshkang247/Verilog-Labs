@@ -1,0 +1,16 @@
+
+module part1(input [9:0]SW, output [0:6] HEX0, HEX1);
+	binary_to_7_seg U0 (SW[3:0], HEX0);
+	binary_to_7_seg U1 (SW[7:4], HEX1);
+end module
+
+module binary_to_7seg(input [3:0] V, output [0:6] DISP);
+	assign DISP[0] = (V[2] & ~V[1] & ~V[0]) | (~V[3] & ~V[2] & ~V[1] & V[0]);
+	assign DISP[1] = (V[2] & ~V[1] & V[0]) | (V[2] & V[1] & ~V[0]);
+	assign DISP[2] = ~V[2] & V[1] & ~V[0];
+	assign DISP[3] = (V[3] & V[0]) | (V[2] & ~V[1] & ~V[0]) | (~V[2] & ~V[1] & V[0]) | (V[2] & V[1] & V[0]);
+	assign DISP[4] = V[0] | (V[2] & ~V[1]);
+	assign DISP[5] = (V[1] & V[0]) | (~V[3] & ~V[2] & V[0]) | (~V[3] & ~V[2] & V[1]);
+	assign DISP[6] = (V[2] & V[1] & V[0]) | (~V[3] & ~V[2] & ~V[1]);
+	
+endmodule

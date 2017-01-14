@@ -1,0 +1,8 @@
+
+State Machine - |part3|y
+Name y~4 y~3 y~2 
+y.A 0 0 0 
+y.B 0 0 1 
+y.C 0 1 0 
+y.D 0 1 1 
+y.E 1 0 0 

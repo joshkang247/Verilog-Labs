@@ -1,0 +1,13 @@
+module part1(input [9:0] SW, input [0:0] KEY0, output [9:0] LEDR);
+	reg [8:0] Y, y;
+	parameter 	A = 9'b 000000001, B = 9'b 000000010, C = 9'b 000000100,
+					D = 9'b 000001000, E = 9'b 000010000, F = 9'b 000100000,
+					G = 9'b 001000000, H = 9'b 010000000, I = 9'b 100000000;
+	
+	case (y)
+		A:	if SW[0] Y=F;
+			else Y=B;
+
+
+endmodule
+	

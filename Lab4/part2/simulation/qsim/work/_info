@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/altera_lite/16.0/Lab4/part2/simulation/qsim
+vpart2
+!s110 1476307942
+!i10b 1
+!s100 MGGAgLV28LC2Ahd8lTIKn2
+I>DQLAFc5:@CGDPZMS`9]M3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1476307942
+8part2.vo
+Fpart2.vo
+L0 32
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z3 !s108 1476307942.000000
+!s107 part2.vo|
+!s90 -work|work|part2.vo|
+!i113 1
+Z4 o-work work
+vpart2_vlg_vec_tst
+!s110 1476307943
+!i10b 1
+!s100 eQb]:ZLSF3BP_CLWPB1<V2
+IFPNjm27fYfSW]7H8YGdZ:1
+R1
+R0
+w1476307940
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+R3
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4

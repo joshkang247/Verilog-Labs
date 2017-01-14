@@ -1,0 +1,24 @@
+module part3(input [3:0] KEY0, input [9:0] SW, output [6:0] HEX1, HEX0);
+	wire Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7;
+	TFF U0 (SW[1], KEY[0], SW[0], Q0);
+	TFF U1 ((Q0 & SW[1]), KEY[0], SW[0], Q1);
+	TFF U2 ((Q1 & SW[1]), KEY[0], SW[0], Q2);
+	TFF U3 ((Q2 & SW[1]), KEY[0], SW[0], Q3);
+	TFF U4 ((Q3 & SW[1]), KEY[0], SW[0], Q4);
+	TFF U5 ((Q4 & SW[1]), KEY[0], SW[0], Q5);
+	TFF U6 ((Q5 & SW[1]), KEY[0], SW[0], Q6);
+	TFF U7 ((Q6 & SW[1]), KEY[0], SW[0], Q7);
+	
+	
+
+
+module TFF(input T, Clock, Resetn, output reg Q);
+	assign D = T ^ Q;
+
+	always @ (negedge Resetn, posedge Clock)
+		if (Resetn == 0)
+			Q <= 1'b 0;
+		else
+			Q <= D;
+		
+	endmodule 

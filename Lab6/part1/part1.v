@@ -1,0 +1,37 @@
+module part1(input [9:0] SW, input [3:0] KEY, output [9:0]LEDR, output [8:0] Y, y);
+	wire w, z;
+	
+	assign w = SW[1];
+	assign LEDR[9] = z;
+	
+	
+	assign Y[0] = ~SW[0];
+	assign Y[1] = SW[0]&(~w&(y[0]|y[5]|y[6]|y[7]|y[8]));
+	assign Y[2] = SW[0]&(~w&y[1]);
+	assign Y[3] = SW[0]&(~w&y[2]);
+	assign Y[4] = SW[0]&(~w&(y[3]|y[4]));
+	assign Y[5] = SW[0]&(w&(y[0]|y[1]|y[2]|y[3]|y[4]));
+	assign Y[6] = SW[0]&(w&(y[5]));
+	assign Y[7] = SW[0]&(w&(y[6]));
+	assign Y[8] = SW[0]&(w&(y[8]|y[7]));
+	
+	assign z = (y[8]|y[4]);
+	
+	flipflop A1 (Y[0], KEY[0], SW[0], y[0]);
+	flipflop A2 (Y[1], KEY[0], SW[0], y[1]);
+	flipflop A3 (Y[2], KEY[0], SW[0], y[2]);
+	flipflop A4 (Y[3], KEY[0], SW[0], y[3]);
+	flipflop A5 (Y[4], KEY[0], SW[0], y[4]);
+	flipflop A6 (Y[5], KEY[0], SW[0], y[5]);
+	flipflop A7 (Y[6], KEY[0], SW[0], y[6]);
+	flipflop A8 (Y[7], KEY[0], SW[0], y[7]);
+	flipflop A9 (Y[8], KEY[0], SW[0], y[8]);
+	
+	assign LEDR[8:0] = y[8:0];
+
+endmodule
+	
+module flipflop(input D, Clock, Resetn, output reg Q);
+	always @(posedge Clock)
+		Q <= D;
+endmodule

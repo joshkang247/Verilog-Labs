@@ -1,0 +1,77 @@
+
+C:/altera_lite/16.0/Lab78/part3/part3.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+
+			.text
+			.global _start
+_start:		
+			LDR		R4, =TEST_NUM //load data word into R1
+   0:	e59f406c 	ldr	r4, [pc, #108]	; 74 <TEST_NUM+0x2c>
+			MOV		R5, #0 //R5 gets 0
+   4:	e3a05000 	mov	r5, #0
+
+00000008 <MAIN>:
+
+MAIN:		LDR 	R1, [R4], #4
+   8:	e4941004 	ldr	r1, [r4], #4
+			CMP		R1, #0
+   c:	e3510000 	cmp	r1, #0
+			BEQ 	END
+  10:	0a000003 	beq	24 <END>
+			BL		ONES
+  14:	eb000003 	bl	28 <ONES>
+
+00000018 <RET>:
+RET:		CMP 	R5, R0
+  18:	e1550000 	cmp	r5, r0
+			MOVLT	R5, R0
+  1c:	b1a05000 	movlt	r5, r0
+			B 		MAIN
+  20:	eafffff8 	b	8 <MAIN>
+
+00000024 <END>:
+
+END:		B 		END
+  24:	eafffffe 	b	24 <END>
+
+00000028 <ONES>:
+
+ONES:		MOV 	R0, #0
+  28:	e3a00000 	mov	r0, #0
+
+0000002c <LOOP>:
+
+LOOP:		CMP		R1, #0
+  2c:	e3510000 	cmp	r1, #0
+			BEQ		RET
+  30:	0afffff8 	beq	18 <RET>
+			LSR		R2, R1, #1
+  34:	e1a020a1 	lsr	r2, r1, #1
+			AND		R1, R1, R2
+  38:	e0011002 	and	r1, r1, r2
+			ADD		R0, #1
+  3c:	e2800001 	add	r0, r0, #1
+			B 		LOOP
+  40:	eafffff9 	b	2c <LOOP>
+
+00000044 <END_ONES>:
+END_ONES:	MOV 	PC, LR
+  44:	e1a0f00e 	mov	pc, lr
+
+00000048 <TEST_NUM>:
+  48:	0000000f 	.word	0x0000000f
+  4c:	0000000e 	.word	0x0000000e
+  50:	fff2390e 	.word	0xfff2390e
+  54:	132fe00f 	.word	0x132fe00f
+  58:	103feeef 	.word	0x103feeef
+  5c:	1283320f 	.word	0x1283320f
+  60:	1f34eb2f 	.word	0x1f34eb2f
+  64:	1fba927b 	.word	0x1fba927b
+  68:	19273bce 	.word	0x19273bce
+  6c:	10283bdc 	.word	0x10283bdc
+  70:	02836bde 	.word	0x02836bde
+  74:	00000048 	.word	0x00000048

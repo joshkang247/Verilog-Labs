@@ -1,0 +1,12 @@
+//module part3(input [3:0] KEY, input [9:0] SW, output [0:6] HEX3, HEX2, HEX1, HEX0);
+
+
+
+module part3(input enable, clock, clear, output reg [15:0] count);
+
+	always @ (negedge clear, posedge clock)
+		if (clear == 0)
+			count <= 16'b 0;
+		else 
+			count <= count + 1;
+endmodule 

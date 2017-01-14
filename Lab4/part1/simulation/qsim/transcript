@@ -1,0 +1,29 @@
+# do part1.do
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 23:26:24 on Oct 10,2016
+# vlog -work work part1.vo 
+# -- Compiling module part1
+# 
+# Top level modules:
+# 	part1
+# End time: 23:26:24 on Oct 10,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 23:26:24 on Oct 10,2016
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module part1_vlg_vec_tst
+# 
+# Top level modules:
+# 	part1_vlg_vec_tst
+# End time: 23:26:24 on Oct 10,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.part1_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 23:26:24 on Oct 10,2016
+# Loading work.part1_vlg_vec_tst
+# Loading work.part1
+# ** Note: $stop    : Waveform.vwf.vt(47)
+#    Time: 1 us  Iteration: 0  Instance: /part1_vlg_vec_tst
+# Break in Module part1_vlg_vec_tst at Waveform.vwf.vt line 47
+# Stopped at Waveform.vwf.vt line 47
+# End time: 23:26:24 on Oct 10,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

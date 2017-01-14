@@ -1,0 +1,105 @@
+
+C:/altera_lite/16.0/Lab9_10/part1/part1.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+			
+			.text
+			.global _start
+
+_start:
+			LDR 	R8, =	LIST //stores pointer to the first word
+   0:	e59f8094 	ldr	r8, [pc, #148]	; 9c <LIST+0x2c>
+			LDR		R7, [R8] //stores size of list
+   4:	e5987000 	ldr	r7, [r8]
+			SUB		R6, R7, #1 //only needs to iterate outside #words - 1 times
+   8:	e2476001 	sub	r6, r7, #1
+			LDR		R0, =0 //flag for finishing loop
+   c:	e3a00000 	mov	r0, #0
+			ADD		R9, R8, #4 //holds pointer to current value R9 will change to the largest value
+  10:	e2889004 	add	r9, r8, #4
+
+00000014 <MAIN>:
+		
+		
+
+	
+			
+MAIN:		CMP 	R0, #0
+  14:	e3500000 	cmp	r0, #0
+			BEQ		OUTER //performs bubblesort
+  18:	0a000000 	beq	20 <OUTER>
+			B 		END
+  1c:	ea000012 	b	6c <END>
+
+00000020 <OUTER>:
+			
+			
+			
+			
+OUTER:		CMP		R6, #0 //reaches end
+  20:	e3560000 	cmp	r6, #0
+			MOVEQ	R0, #1 //sets finishing flag
+  24:	03a00001 	moveq	r0, #1
+			BEQ		MAIN
+  28:	0afffff9 	beq	14 <MAIN>
+			
+			MOV		R5, R6 //stores number of interations inner loop needs
+  2c:	e1a05006 	mov	r5, r6
+			ADD		R9, R8, #4 //reset R9 to original value
+  30:	e2889004 	add	r9, r8, #4
+			B	 	INNER //calls inner loop to run
+  34:	ea000001 	b	40 <INNER>
+			SUB		R6, #1
+  38:	e2466001 	sub	r6, r6, #1
+			B 		OUTER //repeat outer loop
+  3c:	eafffff7 	b	20 <OUTER>
+
+00000040 <INNER>:
+
+INNER:		CMP		R5, #0 //reaches end
+  40:	e3550000 	cmp	r5, #0
+			BEQ		OUTER //returns to outer loop
+  44:	0afffff5 	beq	20 <OUTER>
+			
+			//LDR		R11, [R9] //temp to hold content of R9
+			ADD		R10, R9, #4 //holds pointer to next number
+  48:	e289a004 	add	r10, r9, #4
+			LDR		R2, [R9] //holds value of current pointer
+  4c:	e5992000 	ldr	r2, [r9]
+			LDR		R3, [R10] //holds value of next pointer
+  50:	e59a3000 	ldr	r3, [r10]
+			CMP		R2, R3 //compares current value with next value
+  54:	e1520003 	cmp	r2, r3
+			STRLT	R3, [R9] //stores the larger number inside R9
+  58:	b5893000 	strlt	r3, [r9]
+			STRLT	R2, [R10] //stores smaller number inside R10
+  5c:	b58a2000 	strlt	r2, [r10]
+			MOV		R9, R10 //updates current pointer
+  60:	e1a0900a 	mov	r9, r10
+			SUB 	R5, #1
+  64:	e2455001 	sub	r5, r5, #1
+			B 		INNER //repeat inner loop
+  68:	eafffff4 	b	40 <INNER>
+
+0000006c <END>:
+			
+			
+END:		B 		END
+  6c:	eafffffe 	b	6c <END>
+
+00000070 <LIST>:
+  70:	0000000a 	.word	0x0000000a
+  74:	00000578 	.word	0x00000578
+  78:	0000002d 	.word	0x0000002d
+  7c:	00000017 	.word	0x00000017
+  80:	00000005 	.word	0x00000005
+  84:	00000003 	.word	0x00000003
+  88:	00000008 	.word	0x00000008
+  8c:	00000011 	.word	0x00000011
+  90:	00000004 	.word	0x00000004
+  94:	00000014 	.word	0x00000014
+  98:	00000021 	.word	0x00000021
+  9c:	00000070 	.word	0x00000070

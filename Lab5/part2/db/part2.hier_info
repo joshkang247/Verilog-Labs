@@ -1,0 +1,517 @@
+|part2
+SW[0] => A[0].IN2
+SW[1] => A[1].IN2
+SW[2] => A[2].IN2
+SW[3] => A[3].IN2
+SW[4] => A[4].IN2
+SW[5] => A[5].IN2
+SW[6] => A[6].IN2
+SW[7] => A[7].IN2
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => Q[0].ACLR
+KEY[0] => Q[1].ACLR
+KEY[0] => Q[2].ACLR
+KEY[0] => Q[3].ACLR
+KEY[0] => Q[4].ACLR
+KEY[0] => Q[5].ACLR
+KEY[0] => Q[6].ACLR
+KEY[0] => Q[7].ACLR
+KEY[1] => Q[0].CLK
+KEY[1] => Q[1].CLK
+KEY[1] => Q[2].CLK
+KEY[1] => Q[3].CLK
+KEY[1] => Q[4].CLK
+KEY[1] => Q[5].CLK
+KEY[1] => Q[6].CLK
+KEY[1] => Q[7].CLK
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+HEX5[6] <= binary_to_7seg_hex:U20.port1
+HEX5[5] <= binary_to_7seg_hex:U20.port1
+HEX5[4] <= binary_to_7seg_hex:U20.port1
+HEX5[3] <= binary_to_7seg_hex:U20.port1
+HEX5[2] <= binary_to_7seg_hex:U20.port1
+HEX5[1] <= binary_to_7seg_hex:U20.port1
+HEX5[0] <= binary_to_7seg_hex:U20.port1
+HEX4[6] <= binary_to_7seg_hex:U21.port1
+HEX4[5] <= binary_to_7seg_hex:U21.port1
+HEX4[4] <= binary_to_7seg_hex:U21.port1
+HEX4[3] <= binary_to_7seg_hex:U21.port1
+HEX4[2] <= binary_to_7seg_hex:U21.port1
+HEX4[1] <= binary_to_7seg_hex:U21.port1
+HEX4[0] <= binary_to_7seg_hex:U21.port1
+HEX3[6] <= binary_to_7seg_hex:U00.port1
+HEX3[5] <= binary_to_7seg_hex:U00.port1
+HEX3[4] <= binary_to_7seg_hex:U00.port1
+HEX3[3] <= binary_to_7seg_hex:U00.port1
+HEX3[2] <= binary_to_7seg_hex:U00.port1
+HEX3[1] <= binary_to_7seg_hex:U00.port1
+HEX3[0] <= binary_to_7seg_hex:U00.port1
+HEX2[6] <= binary_to_7seg_hex:U01.port1
+HEX2[5] <= binary_to_7seg_hex:U01.port1
+HEX2[4] <= binary_to_7seg_hex:U01.port1
+HEX2[3] <= binary_to_7seg_hex:U01.port1
+HEX2[2] <= binary_to_7seg_hex:U01.port1
+HEX2[1] <= binary_to_7seg_hex:U01.port1
+HEX2[0] <= binary_to_7seg_hex:U01.port1
+HEX1[6] <= binary_to_7seg_hex:U10.port1
+HEX1[5] <= binary_to_7seg_hex:U10.port1
+HEX1[4] <= binary_to_7seg_hex:U10.port1
+HEX1[3] <= binary_to_7seg_hex:U10.port1
+HEX1[2] <= binary_to_7seg_hex:U10.port1
+HEX1[1] <= binary_to_7seg_hex:U10.port1
+HEX1[0] <= binary_to_7seg_hex:U10.port1
+HEX0[6] <= binary_to_7seg_hex:U11.port1
+HEX0[5] <= binary_to_7seg_hex:U11.port1
+HEX0[4] <= binary_to_7seg_hex:U11.port1
+HEX0[3] <= binary_to_7seg_hex:U11.port1
+HEX0[2] <= binary_to_7seg_hex:U11.port1
+HEX0[1] <= binary_to_7seg_hex:U11.port1
+HEX0[0] <= binary_to_7seg_hex:U11.port1
+LEDR[0] <= full_adder:U7.port4
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+
+
+|part2|binary_to_7seg_hex:U00
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|binary_to_7seg_hex:U01
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|binary_to_7seg_hex:U10
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|binary_to_7seg_hex:U11
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U0
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U0|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U1
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U1|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U2
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U2|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U3
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U3|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U4
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U4|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U5
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U5|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U6
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U6|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|full_adder:U7
+ci => ci.IN1
+a => x.IN0
+b => b.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+co <= mux_1bit_2to1:U0.port3
+
+
+|part2|full_adder:U7|mux_1bit_2to1:U0
+s => f.IN0
+s => f.IN0
+x => f.IN1
+y => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|binary_to_7seg_hex:U20
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|binary_to_7seg_hex:U21
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN0
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[0] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[1] => DISP.IN0
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN1
+A[1] => DISP.IN0
+A[2] => DISP.IN1
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN0
+A[2] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+A[3] => DISP.IN1
+DISP[6] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[5] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[4] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[3] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[2] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[1] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+DISP[0] <= DISP.DB_MAX_OUTPUT_PORT_TYPE
+
+

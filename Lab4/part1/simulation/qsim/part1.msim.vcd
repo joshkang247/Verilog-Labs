@@ -1,0 +1,137 @@
+$comment
+	File created using the following command:
+		vcd file part1.msim.vcd -direction
+$end
+$date
+	Mon Oct 10 23:26:24 2016
+$end
+$version
+	ModelSim Version 10.4d
+$end
+$timescale
+	1ps
+$end
+
+$scope module part1_vlg_vec_tst $end
+$var reg 10 ! SW [9:0] $end
+$var wire 1 " HEX0 [0] $end
+$var wire 1 # HEX0 [1] $end
+$var wire 1 $ HEX0 [2] $end
+$var wire 1 % HEX0 [3] $end
+$var wire 1 & HEX0 [4] $end
+$var wire 1 ' HEX0 [5] $end
+$var wire 1 ( HEX0 [6] $end
+$var wire 1 ) HEX1 [0] $end
+$var wire 1 * HEX1 [1] $end
+$var wire 1 + HEX1 [2] $end
+$var wire 1 , HEX1 [3] $end
+$var wire 1 - HEX1 [4] $end
+$var wire 1 . HEX1 [5] $end
+$var wire 1 / HEX1 [6] $end
+
+$scope module i1 $end
+$var wire 1 0 gnd $end
+$var wire 1 1 vcc $end
+$var wire 1 2 unknown $end
+$var tri1 1 3 devclrn $end
+$var tri1 1 4 devpor $end
+$var tri1 1 5 devoe $end
+$var wire 1 6 SW[8]~input_o $end
+$var wire 1 7 SW[9]~input_o $end
+$var wire 1 8 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 9 SW[0]~input_o $end
+$var wire 1 : SW[2]~input_o $end
+$var wire 1 ; SW[1]~input_o $end
+$var wire 1 < HEX0~0_combout $end
+$var wire 1 = SW[3]~input_o $end
+$var wire 1 > HEX0~1_combout $end
+$var wire 1 ? HEX0~2_combout $end
+$var wire 1 @ HEX0~3_combout $end
+$var wire 1 A HEX0~4_combout $end
+$var wire 1 B HEX0~5_combout $end
+$var wire 1 C HEX0~6_combout $end
+$var wire 1 D SW[4]~input_o $end
+$var wire 1 E SW[6]~input_o $end
+$var wire 1 F SW[5]~input_o $end
+$var wire 1 G HEX1~0_combout $end
+$var wire 1 H SW[7]~input_o $end
+$var wire 1 I HEX1~1_combout $end
+$var wire 1 J HEX1~2_combout $end
+$var wire 1 K HEX1~3_combout $end
+$var wire 1 L HEX1~4_combout $end
+$var wire 1 M HEX1~5_combout $end
+$var wire 1 N HEX1~6_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000101 !
+0(
+0'
+1&
+0%
+0$
+1#
+0"
+0/
+0.
+1-
+1,
+0+
+0*
+1)
+00
+11
+x2
+13
+14
+15
+06
+07
+08
+19
+1:
+0;
+0<
+0=
+0>
+1?
+0@
+0A
+1B
+1C
+0D
+1E
+0F
+0G
+0H
+0I
+1J
+1K
+0L
+0M
+0N
+$end
+#150000
+b101 !
+b1 !
+b0 !
+09
+0:
+0E
+1N
+0K
+0J
+1G
+0B
+0?
+1<
+1(
+0&
+0#
+1/
+0-
+0,
+0)
+#1000000

@@ -1,0 +1,129 @@
+
+C:/altera_lite/16.0/Lab9_10/part2/part2.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+			.text
+			.global _start
+
+_start:		LDR 	R1, =0xFF200000 //LEDR port
+   0:	e59f1098 	ldr	r1, [pc, #152]	; a0 <DELAY+0x14>
+			LDR 	R2, =0xFF200050 //KEYS port
+   4:	e59f2098 	ldr	r2, [pc, #152]	; a4 <DELAY+0x18>
+			LDR 	R3, =0x00000001 //LEDR[0]
+   8:	e3a03001 	mov	r3, #1
+			LDR 	R4, =0x00000200 //LEDR[9] 
+   c:	e3a04c02 	mov	r4, #512	; 0x200
+			MOV		R8, R3 //start with LEDR[0] on R8 will represent current LEDR info
+  10:	e1a08003 	mov	r8, r3
+			
+			
+			
+			LDR 	R10, =0xFFFEC600
+  14:	e59fa08c 	ldr	r10, [pc, #140]	; a8 <DELAY+0x1c>
+			LDR 	R0, =10000000
+  18:	e59f008c 	ldr	r0, [pc, #140]	; ac <DELAY+0x20>
+			STR 	R0, [R10] //write to load register
+  1c:	e58a0000 	str	r0, [r10]
+			MOV		R0, #0b011 //A = 1, E=1
+  20:	e3a00003 	mov	r0, #3
+			STR		R0, [R10, #8] //write to control register
+  24:	e58a0008 	str	r0, [r10, #8]
+
+00000028 <SHIFT_L>:
+			
+						
+SHIFT_L:	
+			STR		R8, [R1]
+  28:	e5818000 	str	r8, [r1]
+			CMP 	R8, R4 //reaches LEDR[9]
+  2c:	e1580004 	cmp	r8, r4
+			BEQ		SHIFT_R
+  30:	0a000003 	beq	44 <SHIFT_R>
+			
+			LSL		R8, #1
+  34:	e1a08088 	lsl	r8, r8, #1
+			BL		CheckKey
+  38:	eb000008 	bl	60 <CheckKey>
+			BL		DELAY
+  3c:	eb000012 	bl	8c <DELAY>
+			B		SHIFT_L
+  40:	eafffff8 	b	28 <SHIFT_L>
+
+00000044 <SHIFT_R>:
+
+SHIFT_R:	
+			STR		R8, [R1]
+  44:	e5818000 	str	r8, [r1]
+			CMP		R8, R3 //reaches LEDR[0]
+  48:	e1580003 	cmp	r8, r3
+			BEQ		SHIFT_L
+  4c:	0afffff5 	beq	28 <SHIFT_L>
+	
+			
+			LSR		R8, #1
+  50:	e1a080a8 	lsr	r8, r8, #1
+			BL		CheckKey
+  54:	eb000001 	bl	60 <CheckKey>
+			BL		DELAY
+  58:	eb00000b 	bl	8c <DELAY>
+			B		SHIFT_R
+  5c:	eafffff8 	b	44 <SHIFT_R>
+
+00000060 <CheckKey>:
+			BNE		LOOP1
+			
+			
+			B		BACK*/
+			
+CheckKey:	MOV    	R7, #0
+  60:	e3a07000 	mov	r7, #0
+
+00000064 <CheckLoop>:
+CheckLoop:	LDR   	R11, [R2]
+  64:	e592b000 	ldr	r11, [r2]
+			CMP     R11, #0b1000
+  68:	e35b0008 	cmp	r11, #8
+			BNE     NoKey
+  6c:	1a000003 	bne	80 <NoKey>
+
+00000070 <PauseLoop>:
+PauseLoop:	LDR   	R11, [R2]
+  70:	e592b000 	ldr	r11, [r2]
+			CMP     R11, #0b1000
+  74:	e35b0008 	cmp	r11, #8
+			BEQ     PauseLoop
+  78:	0afffffc 	beq	70 <PauseLoop>
+			MVN     R7, R7
+  7c:	e1e07007 	mvn	r7, r7
+
+00000080 <NoKey>:
+NoKey:  	CMP     R7, #0
+  80:	e3570000 	cmp	r7, #0
+			MOVEQ   PC, LR
+  84:	01a0f00e 	moveq	pc, lr
+			B		CheckLoop
+  88:	eafffff5 	b	64 <CheckLoop>
+
+0000008c <DELAY>:
+			
+
+DELAY:		
+			LDR		R0, [R10, #0xC] //reads from status register
+  8c:	e59a000c 	ldr	r0, [r10, #12]
+			CMP		R0, #0
+  90:	e3500000 	cmp	r0, #0
+			BEQ		DELAY
+  94:	0afffffc 	beq	8c <DELAY>
+			STR		R0, [R10, #0xC] //reset F bit
+  98:	e58a000c 	str	r0, [r10, #12]
+			
+	
+			MOV		PC, LR
+  9c:	e1a0f00e 	mov	pc, lr
+  a0:	ff200000 	.word	0xff200000
+  a4:	ff200050 	.word	0xff200050
+  a8:	fffec600 	.word	0xfffec600
+  ac:	00989680 	.word	0x00989680

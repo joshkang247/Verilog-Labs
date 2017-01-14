@@ -1,0 +1,166 @@
+
+C:/altera_lite/16.0/Lab78/part4/part4.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+
+			.text
+			.global _start
+_start:		
+			LDR		SP, =0x3ffffffc
+   0:	e3e0d10f 	mvn	sp, #-1073741821	; 0xc0000003
+			LDR		R4, =TEST_NUM //load data word into R1
+   4:	e59f40e0 	ldr	r4, [pc, #224]	; ec <TEST_NUM+0x10>
+			MOV		R5, #0 //R5 gets 0
+   8:	e3a05000 	mov	r5, #0
+			MOV 	R6, #0 //R6 gets 0
+   c:	e3a06000 	mov	r6, #0
+			MOV 	R7, #0 //R7 gets 0
+  10:	e3a07000 	mov	r7, #0
+
+00000014 <MAIN>:
+
+MAIN:		LDR 	R8, [R4], #4
+  14:	e4948004 	ldr	r8, [r4], #4
+			CMP		R8, #0
+  18:	e3580000 	cmp	r8, #0
+			BEQ 	END
+  1c:	0a000009 	beq	48 <END>
+
+			BL		ONES
+  20:	eb000009 	bl	4c <ONES>
+			CMP 	R5, R0
+  24:	e1550000 	cmp	r5, r0
+			MOVLT	R5, R0
+  28:	b1a05000 	movlt	r5, r0
+
+			BL		ZEROS
+  2c:	eb000011 	bl	78 <ZEROS>
+			CMP		R6, R0
+  30:	e1560000 	cmp	r6, r0
+			MOVLT	R6, R0
+  34:	b1a06000 	movlt	r6, r0
+
+			BL		ALT
+  38:	eb00001b 	bl	ac <ALT>
+			CMP		R7, R0
+  3c:	e1570000 	cmp	r7, r0
+			MOVLT	R7, R0
+  40:	b1a07000 	movlt	r7, r0
+
+			B 		MAIN
+  44:	eafffff2 	b	14 <MAIN>
+
+00000048 <END>:
+
+END:		B 		END
+  48:	eafffffe 	b	48 <END>
+
+0000004c <ONES>:
+
+ONES:		PUSH	{LR}
+  4c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+			MOV 	R0, #0
+  50:	e3a00000 	mov	r0, #0
+			MOV 	R1, R8
+  54:	e1a01008 	mov	r1, r8
+
+00000058 <LOOP1>:
+
+LOOP1:		CMP		R1, #0
+  58:	e3510000 	cmp	r1, #0
+			BEQ		END_ONES
+  5c:	0a000003 	beq	70 <END_ONES>
+			LSR		R2, R1, #1
+  60:	e1a020a1 	lsr	r2, r1, #1
+			AND		R1, R1, R2
+  64:	e0011002 	and	r1, r1, r2
+			ADD		R0, #1
+  68:	e2800001 	add	r0, r0, #1
+			B 		LOOP1
+  6c:	eafffff9 	b	58 <LOOP1>
+
+00000070 <END_ONES>:
+
+END_ONES:	POP		{LR}
+  70:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+			MOV 	PC, LR
+  74:	e1a0f00e 	mov	pc, lr
+
+00000078 <ZEROS>:
+
+ZEROS:		PUSH	{LR}
+  78:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+			MOV 	R0, #0
+  7c:	e3a00000 	mov	r0, #0
+			MOV 	R1, R8
+  80:	e1a01008 	mov	r1, r8
+			MOV     R3, #0xFFFFFFFF
+  84:	e3e03000 	mvn	r3, #0
+			EOR		R1, R1, R3 //invert the word and find the longest 1st
+  88:	e0211003 	eor	r1, r1, r3
+
+0000008c <LOOP2>:
+
+LOOP2:		CMP		R1, #0
+  8c:	e3510000 	cmp	r1, #0
+			BEQ		END_ZEROS
+  90:	0a000003 	beq	a4 <END_ZEROS>
+			LSR		R2, R1, #1
+  94:	e1a020a1 	lsr	r2, r1, #1
+			AND		R1, R1, R2
+  98:	e0011002 	and	r1, r1, r2
+			ADD		R0, #1
+  9c:	e2800001 	add	r0, r0, #1
+			B 		LOOP2
+  a0:	eafffff9 	b	8c <LOOP2>
+
+000000a4 <END_ZEROS>:
+			
+
+END_ZEROS:	POP		{LR}
+  a4:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+			MOV 	PC, LR
+  a8:	e1a0f00e 	mov	pc, lr
+
+000000ac <ALT>:
+
+ALT:		PUSH	{R8, R9, LR}
+  ac:	e92d4300 	push	{r8, r9, lr}
+			MOV 	R0, #0
+  b0:	e3a00000 	mov	r0, #0
+			MOVW 	R9, #0xaaaa
+  b4:	e30a9aaa 	movw	r9, #43690	; 0xaaaa
+			MOVT	R9, #0xaaaa
+  b8:	e34a9aaa 	movt	r9, #43690	; 0xaaaa
+			EOR		R8, R8, R9
+  bc:	e0288009 	eor	r8, r8, r9
+
+			BL 		ONES
+  c0:	ebffffe1 	bl	4c <ONES>
+			MOV		R7, R0
+  c4:	e1a07000 	mov	r7, r0
+
+			BL		ZEROS
+  c8:	ebffffea 	bl	78 <ZEROS>
+			CMP		R7, R0
+  cc:	e1570000 	cmp	r7, r0
+			MOVLT	R7, R0
+  d0:	b1a07000 	movlt	r7, r0
+
+000000d4 <END_ALT>:
+
+
+END_ALT:	POP		{R8, R9, LR}
+  d4:	e8bd4300 	pop	{r8, r9, lr}
+			MOV 	PC, LR
+  d8:	e1a0f00e 	mov	pc, lr
+
+000000dc <TEST_NUM>:
+  dc:	0000000f 	.word	0x0000000f
+  e0:	0000000e 	.word	0x0000000e
+  e4:	aaa00a00 	.word	0xaaa00a00
+  e8:	00000000 	.word	0x00000000
+  ec:	000000dc 	.word	0x000000dc

@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/altera_lite/16.0/Lab4/part5/simulation/modelsim
+vbinary_to_7seg
+Z1 !s110 1476328989
+!i10b 1
+!s100 AkIO5AgIli6=1daYi2nzY2
+Ie:Oj_b[4ND^ia@fT7zYEB2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1476328589
+Z4 8C:/altera_lite/16.0/Lab4/part5/part5.v
+Z5 FC:/altera_lite/16.0/Lab4/part5/part5.v
+L0 126
+Z6 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z7 !s108 1476328989.000000
+Z8 !s107 C:/altera_lite/16.0/Lab4/part5/part5.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera_lite/16.0/Lab4/part5|C:/altera_lite/16.0/Lab4/part5/part5.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+C:/altera_lite/16.0/Lab4/part5
+vdecimal_to_7seg
+R1
+!i10b 1
+!s100 6@aYB02bUE7ODEm9ScRHd3
+Ii5G<CSReUCbI?Y`]TQN]61
+R2
+R0
+R3
+R4
+R5
+L0 37
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpart5
+R1
+!i10b 1
+!s100 5G74P`YRheNJM53_RR;N72
+IzU_9_CMNbT?A321cWBmlb0
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

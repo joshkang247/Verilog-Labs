@@ -1,0 +1,31 @@
+
+			.text
+			.global _start
+_start:		
+			LDR		R4, TEST_NUM //load data word into R1
+			MOV		R5, #0 //R5 gets 0
+
+MAIN:		LDR 	R1, [R4], #4
+			CMP		R1, #0
+			BEQ 	END
+			BL		ONES
+RET:		CMP 	R5, R0
+			MOVGT	R5, R0
+			B 		MAIN
+
+END:		B 		END
+
+ONES:
+LOOP:		CMP		R1, #0
+			BEQ		END
+			LSR		R2, R1, #1
+			AND		R1, R1, R2
+			ADD		R0, #1
+			B 		LOOP
+END_ONES:	MOV 	PC, LR
+
+TEST_NUM: 	.word	0x0000000F
+			.word 	0x0000000E
+
+			.end
+

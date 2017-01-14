@@ -1,0 +1,115 @@
+|part12
+SW[0] => SW[0].IN10
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => KEY[0].IN9
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+LEDR[0] <= flipflop:A1.port3
+LEDR[1] <= flipflop:A2.port3
+LEDR[2] <= flipflop:A3.port3
+LEDR[3] <= flipflop:A4.port3
+LEDR[4] <= flipflop:A5.port3
+LEDR[5] <= flipflop:A6.port3
+LEDR[6] <= flipflop:A7.port3
+LEDR[7] <= flipflop:A8.port3
+LEDR[8] <= flipflop:A9.port3
+LEDR[9] <= z.DB_MAX_OUTPUT_PORT_TYPE
+Y[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y[2].DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y[3].DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Y[4].DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Y[5].DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Y[6].DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= Y[7].DB_MAX_OUTPUT_PORT_TYPE
+Y[8] <= Y[8].DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= flipflop:A1.port3
+y[1] <= flipflop:A2.port3
+y[2] <= flipflop:A3.port3
+y[3] <= flipflop:A4.port3
+y[4] <= flipflop:A5.port3
+y[5] <= flipflop:A6.port3
+y[6] <= flipflop:A7.port3
+y[7] <= flipflop:A8.port3
+y[8] <= flipflop:A9.port3
+
+
+|part12|flipflop:A1
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A2
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A3
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A4
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A5
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A6
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A7
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A8
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part12|flipflop:A9
+D => Q~reg0.DATAIN
+Clock => Q~reg0.CLK
+Resetn => ~NO_FANOUT~
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
